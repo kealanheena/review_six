@@ -1,5 +1,5 @@
 class Results
   def format_grades(grades)
-    "Green: 1"
+    "Green: #{grades.split(",").length}"
   end
 end
