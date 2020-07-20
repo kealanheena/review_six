@@ -5,8 +5,10 @@ class Results
       "Green: #{grades.split(",").length}"
     elsif grades_array.include?('Amber')
       "Amber: #{grades.split(",").length}"
-    else
+    elsif grades_array.include?('Red')
       "Red: #{grades.split(",").length}"
+    else
+      "Uncounted: 1"
     end
   end
 end

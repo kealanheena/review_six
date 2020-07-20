@@ -38,5 +38,11 @@ describe Results do
       end
     end
 
+    context "Uncounted Grades" do
+      it "should return 'Uncounted: 1' when 'Uncounted' is passed" do
+        expect(subject.format_grades('Uncounted')).to eq("Uncounted: 1")
+      end
+    end
+
   end
 end
