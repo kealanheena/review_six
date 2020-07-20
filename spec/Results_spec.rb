@@ -23,7 +23,7 @@ describe Results do
         expect(subject.format_grades('Amber')).to eq('Amber: 1')
       end
 
-      it "should return 'Amber: 2' when 'Amber' is passed" do
+      it "should return 'Amber: 2' when 'Amber, Amber' is passed" do
         expect(subject.format_grades('Amber, Amber')).to eq('Amber: 2')
       end
     end
@@ -31,6 +31,10 @@ describe Results do
     context "Red Grades" do
       it "should return 'Red: 1' when 'Red is passed" do
         expect(subject.format_grades('Red')).to eq("Red: 1")
+      end
+
+      it "should return 'Red: 2' when 'Red, Red' is passed" do
+        expect(subject.format_grades('Red, Red')).to eq("Red: 2")
       end
     end
 

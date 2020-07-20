@@ -6,7 +6,7 @@ class Results
     elsif grades_array.include?('Amber')
       "Amber: #{grades.split(",").length}"
     else
-      "Red: 1"
+      "Red: #{grades.split(",").length}"
     end
   end
 end
