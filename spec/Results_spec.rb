@@ -28,5 +28,11 @@ describe Results do
       end
     end
 
+    context "Red Grades" do
+      it "should return 'Red: 1' when 'Red is passed" do
+        expect(subject.format_grades('Red')).to eq("Red: 1")
+      end
+    end
+
   end
 end

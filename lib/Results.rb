@@ -1,9 +1,12 @@
 class Results
   def format_grades(grades)
-    if grades.split(",").include?('Green')
+    grades_array = grades.split(",")
+    if grades_array.include?('Green')
       "Green: #{grades.split(",").length}"
-    else
+    elsif grades_array.include?('Amber')
       "Amber: #{grades.split(",").length}"
+    else
+      "Red: 1"
     end
   end
 end
