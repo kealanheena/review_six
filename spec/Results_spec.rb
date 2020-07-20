@@ -42,6 +42,10 @@ describe Results do
       it "should return 'Uncounted: 1' when 'Uncounted' is passed" do
         expect(subject.format_grades('Uncounted')).to eq("Uncounted: 1")
       end
+
+      it "should return 'Uncounted: 2' when 'Uncounted, Uncounted' is passed" do
+        expect(subject.format_grades('Uncounted, Uncounted')).to eq("Uncounted: 2")
+      end
     end
 
   end
