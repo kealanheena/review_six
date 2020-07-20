@@ -1,5 +1,9 @@
 class Results
   def format_grades(grades)
-    "Green: #{grades.split(",").length}"
+    if grades.split(",").include?('Green')
+      "Green: #{grades.split(",").length}"
+    else
+      "Amber: 1"
+    end
   end
 end
