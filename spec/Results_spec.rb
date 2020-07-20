@@ -22,6 +22,10 @@ describe Results do
       it "should return 'Amber: 1' when 'Amber' is passed" do
         expect(subject.format_grades('Amber')).to eq('Amber: 1')
       end
+
+      it "should return 'Amber: 2' when 'Amber' is passed" do
+        expect(subject.format_grades('Amber, Amber')).to eq('Amber: 2')
+      end
     end
 
   end

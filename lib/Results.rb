@@ -3,7 +3,7 @@ class Results
     if grades.split(",").include?('Green')
       "Green: #{grades.split(",").length}"
     else
-      "Amber: 1"
+      "Amber: #{grades.split(",").length}"
     end
   end
 end
