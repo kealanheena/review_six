@@ -48,5 +48,12 @@ describe Results do
       end
     end
 
+    context "if differnt grades are passed" do
+      it "should return 'Green: 1 \nAmber 1' when 'Green, Amber' is passed" do
+        expect(subject.format_grades('Green, Amber')).to eq("Green: 1\nAmber: 1")
+
+      end
+    end
+
   end
 end
