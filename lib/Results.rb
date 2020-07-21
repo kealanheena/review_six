@@ -4,31 +4,31 @@ class Results
     @scores = ["Green", "Amber", "Red"]
   end
 
-  def format_grades(grades)
-    grades_array = grades.split(", ")
+  def format_grades(results)
+    @results = results.split(", ")
 
     @scores.each { |score| 
-      add_results(grades_array, score)
+      add_results(score)
     }
 
-    if !grades_array.include?('Green') && !grades_array.include?('Amber') && !grades_array.include?('Red')
-      @result = "Uncounted: #{grades_array.length}"
+    if !@results.include?('Green') && !@results.include?('Amber') && !@results.include?('Red')
+      @formated_grades = "Uncounted: #{@results.length}"
     end
 
-    @result
+    @formated_grades
   end
 
   private
 
-  def grade_counter(array, colour)
-    array.count(colour)
+  def grade_counter(colour)
+    @results.count(colour)
   end
 
-  def add_results(array, colour)
-    if array.include?(colour)
-      grades = grade_counter(array, colour)
-      @result = @result + "\n#{colour}: #{grades}" if @result
-      @result = "#{colour}: #{grades}" if !@result
+  def add_results(colour)
+    if @results.include?(colour)
+      grades = grade_counter(colour)
+      @formated_grades = @formated_grades + "\n#{colour}: #{grades}" if @formated_grades
+      @formated_grades = "#{colour}: #{grades}" if !@formated_grades
     end
   end
 
