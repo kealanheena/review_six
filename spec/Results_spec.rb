@@ -63,8 +63,18 @@ describe Results do
         end
       end
 
-      it "should return 'Green: 1\nAmber: 1\nRed: 1' when 'Green, Amber, Red' is passed" do
-        expect(subject.format_grades('Green, Amber, Red')).to eq("Green: 1\nAmber: 1\nRed: 1")
+      context "if three grades are passed" do
+        it "should return 'Green: 1\nAmber: 1\nRed: 1' when 'Green, Amber, Red' is passed" do
+          expect(subject.format_grades('Green, Amber, Red')).to eq("Green: 1\nAmber: 1\nRed: 1")
+        end
+
+        it "should return 'Green: 1\nAmber: 1\nRed: 1' when 'Amber, Green, Red' is passed" do
+          expect(subject.format_grades('Amber, Green, Red')).to eq("Green: 1\nAmber: 1\nRed: 1")
+        end
+
+        it "should return 'Green: 1\nAmber: 1\nRed: 1' when 'Red, Green, Amber' is passed" do
+          expect(subject.format_grades('Red, Green, Amber')).to eq("Green: 1\nAmber: 1\nRed: 1")
+        end
       end
     end
 
