@@ -1,13 +1,15 @@
 class Results
 
+  def initialize
+    @scores = ["Green", "Amber", "Red"]
+  end
+
   def format_grades(grades)
     grades_array = grades.split(", ")
-    if grades_array.include?('Green')
-      green_grades = grade_counter(grades_array, "Green")
-      @result = "Green: #{green_grades}"
-    end
-    add_results(grades_array, "Amber")
-    add_results(grades_array, "Red")
+
+    @scores.each { |score| 
+      add_results(grades_array, score)
+    }
 
     if !grades_array.include?('Green') && !grades_array.include?('Amber') && !grades_array.include?('Red')
       @result = "Uncounted: #{grades_array.length}"
