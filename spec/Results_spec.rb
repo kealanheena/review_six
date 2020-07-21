@@ -49,12 +49,18 @@ describe Results do
     end
 
     context "if multiple types of grades are passed" do
-      it "should return 'Green: 1\nAmber: 1' when 'Green, Amber' is passed" do
-        expect(subject.format_grades('Green, Amber')).to eq("Green: 1\nAmber: 1")
-      end
+      context "if two grades are passed" do
+        it "should return 'Green: 1\nAmber: 1' when 'Green, Amber' is passed" do
+          expect(subject.format_grades('Green, Amber')).to eq("Green: 1\nAmber: 1")
+        end
 
-      it "should return 'Amber: 1\nRed: 1' when 'Amber, Red' is passed" do
-        expect(subject.format_grades('Amber, Red')).to eq("Amber: 1\nRed: 1")
+        it "should return 'Green: 1\nRed: 1' when 'Green, Red' is passed" do
+          expect(subject.format_grades('Green, Red')).to eq("Green: 1\nRed: 1")
+        end
+
+        it "should return 'Amber: 1\nRed: 1' when 'Amber, Red' is passed" do
+          expect(subject.format_grades('Amber, Red')).to eq("Amber: 1\nRed: 1")
+        end
       end
 
       it "should return 'Green: 1\nAmber: 1\nRed: 1' when 'Green, Amber, Red' is passed" do
